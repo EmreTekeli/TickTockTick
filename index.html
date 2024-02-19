@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TickTock | Geri Sayım</title>
+
+    <meta name="description" content="TickTock ile online sınav zamanlayıcı kullanarak sınav sürenizi takip edin. TYT, AYT, YDS, DGS, KPSS için uygun.">
+    <meta name="keywords" content="sınav zamanlayıcı, online timer, sınav süresi, TYT, AYT, YDS, DGS, KPSS, geri sayım, online sınav">
+    <meta name="author" content="TickTock">
+
+    <meta property="og:title" content="TickTock | Geri Sayım - Online Sınav Zamanlayıcı">
+    <meta property="og:description" content="TickTock ile online sınav zamanlayıcı kullanarak sınav sürenizi takip edin. TYT, AYT, YDS, DGS, KPSS için uygun.">
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        .logo {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 9999;
+        }
+
+        .logo img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        body.dark-mode .logo img {
+            filter: invert(1);
+        }
+    </style>
+</head>
+<body>
+<!--
+        <div class="social">
+        <p>NOT PAYLAŞIMI</p>
+        <ul id="posts">
+        </ul>
+        </div>
+-->
+
+    <div class="logo">
+        <img src="TickTock.png" alt="Logo">
+    </div>
+    <div class="container">
+        <div class="dark-mode-toggle" id="toggleDarkMode">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="left-side">
+            <div class="timer" id="timer">00:00:00</div>
+            <div class="user-controls">
+                <label for="hourInput">Saat:</label>
+                <input type="number" id="hourInput" min="0" max="24" value="0">
+                <label for="minuteInput">Dakika:</label>
+                <input type="number" id="minuteInput" min="0" max="59" value="0">
+                <label for="secondInput">Saniye:</label>
+                <input type="number" id="secondInput" min="0" max="59" value="0">
+                <button id="usePresetTime">Sınav Süresini Kullan</button>
+                <div class="exam-type-container">
+                    <label for="examType">Sınav Türü: </label>
+                    <select id="examType">
+                        <option value="TYT">TYT</option>
+                        <option value="AYT">AYT</option>
+                        <option value="YDS">YDS</option>
+                        <option value="DGS">DGS</option>
+                        <option value="KPSS">KPSS</option>
+                    </select>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="start" class="active">Başlat</button>
+                <button id="pause">Durdur</button>
+                <button id="resume">Devam Et</button>
+                <button id="resetTimer">Saat ve Dakikayı Sıfırla</button>
+            </div>
+            <br>
+            <textarea id="reasonInput" placeholder="Durdurma nedeninizi yazın..."></textarea>
+            <button id="saveReason">Nedeni Kaydet</button>
+            <button id="clearReasons">Kayıtları Temizle</button>
+            <span id="attentionMessage" class="attention" style="display: none;">Dikkat: Lütfen durdurma nedeninizi yazın!</span>
+            <div id="reasonList">
+                <h3>Durdurma Nedenleri:</h3>
+                <ul id="reasons"></ul>
+            </div>
+        </div>
+        <div class="right-side">
+            <div id="notes">
+                <h3>NOTLAR:</h3>
+                <textarea id="noteInput" placeholder="Buraya not ekleyebilirsiniz..."></textarea>
+                <button id="saveNote">Notu Kaydet</button>
+            </div>
+        </div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+</html>
